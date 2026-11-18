@@ -1,0 +1,6 @@
+*.o
+campuscompute
+campuscompute.log
+*.zip
+.~lock.*
+
