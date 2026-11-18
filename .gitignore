@@ -1,6 +1,5 @@
 *.o
 campuscompute
 campuscompute.log
-*.zip
 .~lock.*
-
+graphify-out/
