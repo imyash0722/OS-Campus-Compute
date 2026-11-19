@@ -55,7 +55,7 @@ mini project/
 ├── main.c           # CLI entry point, interactive menu, CLI flags, integrated demo
 ├── Makefile         # Build automation, compiler flags (-Wall -Wextra), make demo, make zip
 ├── README.md        # Complete project documentation & screenshot checklist
-└── VIVA_GUIDE.md    # Comprehensive Viva Voce preparation guide (Top 25 Q&As)
+└── PROJECT_STUDY_GUIDE.md # Comprehensive Operating Systems concept guide
 ```
 
 ### System Calls & POSIX APIs Used
@@ -296,10 +296,10 @@ make zip
 ```
 Output:
 ```
-zip -r PES2UG25CS606.zip main.c input.c scheduler.c logger.c ipc.c banker.c worker.c rlimit.c common.h scheduler.h logger.h ipc.h banker.h worker.h rlimit.h Makefile README.md VIVA_GUIDE.md PROJECT_STUDY_GUIDE.md
+zip -r PES2UG25CS615_PES2UG25CS606.zip samples main.c input.c scheduler.c logger.c ipc.c banker.c worker.c rlimit.c common.h scheduler.h logger.h ipc.h banker.h worker.h rlimit.h Makefile makepdf.py README.md PROJECT_STUDY_GUIDE.md Level 3 Mini Project - Student Copy.docx PES2UG25CS606.pdf PES2UG25CS615.pdf shots/
 Verifying archive integrity:
-unzip -t PES2UG25CS606.zip
-No errors detected in compressed data of PES2UG25CS606.zip.
+unzip -t PES2UG25CS615_PES2UG25CS606.zip
+No errors detected in compressed data of PES2UG25CS615_PES2UG25CS606.zip.
 ```
 
 ---

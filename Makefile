@@ -1,7 +1,7 @@
 CC      = gcc
 CFLAGS  = -Wall -Wextra -g -std=c99 -pthread -D_POSIX_C_SOURCE=200809L -D_DEFAULT_SOURCE
 LDFLAGS = -pthread -lrt
-SRN    ?= PES2UG25CS606
+SRN_PAIR = PES2UG25CS615_PES2UG25CS606
 
 TARGET  = campuscompute
 SRCS    = main.c input.c scheduler.c logger.c ipc.c banker.c worker.c rlimit.c
@@ -28,18 +28,20 @@ clean:
 	rm -f $(OBJS) $(TARGET) campuscompute.log
 
 pdf:
-	python3 makepdf.py $(SRN)
+	python3 makepdf.py PES2UG25CS606
+	python3 makepdf.py PES2UG25CS615
 
 zip: clean pdf
-	zip -r $(SRN).zip samples $(SRCS) $(HEADERS) Makefile makepdf.py README.md DEMO_WALKTHROUGH.md VIVA_GUIDE.md PROJECT_STUDY_GUIDE.md $(SRN).pdf "Level 3 Mini Project - Student Copy.docx"
+	rm -f $(SRN_PAIR).zip
+	zip -r $(SRN_PAIR).zip samples $(SRCS) $(HEADERS) Makefile makepdf.py README.md PROJECT_STUDY_GUIDE.md "Level 3 Mini Project - Student Copy.docx" PES2UG25CS606.pdf PES2UG25CS615.pdf shots/
 	@echo "Verifying archive integrity:"
-	unzip -t $(SRN).zip
+	unzip -t $(SRN_PAIR).zip
 
 help:
 	@echo "make          build ./$(TARGET)"
 	@echo "make run      start the interactive menu"
 	@echo "make demo     run the integrated demonstration"
-	@echo "make pdf      generate \$$SRN.pdf from screenshots and captions"
-	@echo "make zip      package source, documentation, and PDF into \$$SRN.zip"
+	@echo "make pdf      generate PES2UG25CS606.pdf and PES2UG25CS615.pdf"
+	@echo "make zip      package all project material into $(SRN_PAIR).zip"
 	@echo "make clean    remove objects, binary, and log"
 	@echo "IPC objects are removed by the program itself (./$(TARGET) --cleanup)"
